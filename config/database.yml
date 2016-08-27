@@ -10,17 +10,17 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
-  adapter: mysql2
+  adapter: posgresql
   encoding: utf8
   pool: 5
-  username: sbadmin
+  username: postgres
   password: 1234
   host: localhost
   socket: MySQL
 
 development:
   <<: *default
-  database: spblog_development
+  database: spblog
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: spblog_production
-  username: spblog
-  password: <%= ENV['SPBLOG_DATABASE_PASSWORD'] %>
+  database: spblog
+  username: postgres
+    password: <%= ENV['SPBLOG_DATABASE_PASSWORD'] %>
