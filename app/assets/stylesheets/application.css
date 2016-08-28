@@ -45,7 +45,28 @@ header {
   line-height: 90px;
   padding-left: 20px;
 }
+.container {
+ padding-right: -115px;
+ padding-left: -115px;
+margin-right: 20px;
+  margin-left: 124px;
 
+}
+@media (min-width: 444px) {
+ .container {
+   width: 440px;
+ }
+}
+@media (min-width: 200px) {
+ .container {
+   width: 700px;
+ }
+}
+@media (min-width: 100px) {
+ .container {
+   width: 1000px;
+ }
+}
 #horzNav {
   display:block;
   /* Padding Top, Right, Bottom, Left */

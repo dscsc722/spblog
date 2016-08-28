@@ -10,13 +10,13 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
-  adapter: posgresql
+  adapter: postgresql
   encoding: utf8
   pool: 5
   username: postgres
   password: 1234
   host: localhost
-  socket: MySQL
+  #socket:
 
 development:
   <<: *default
@@ -50,6 +50,8 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: spblog
   username: postgres
-    password: <%= ENV['SPBLOG_DATABASE_PASSWORD'] %>
+  pool: 5
+  password: 1234
